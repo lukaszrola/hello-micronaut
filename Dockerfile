@@ -1,6 +1,7 @@
 FROM openjdk:11-slim as java-build
 COPY . /hello-graal
 WORKDIR /hello-graal
+RUN chmod +x gradlew
 RUN ./gradlew build
 
 FROM oracle/graalvm-ce:20.1.0-java11 as graalvm
