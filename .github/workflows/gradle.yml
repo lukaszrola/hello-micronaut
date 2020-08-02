@@ -24,5 +24,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Add permissions to build docker image image
+    - run: chmod +x ./docker-build.sh
     - name: Build native image
       run: ./docker-build.sh
